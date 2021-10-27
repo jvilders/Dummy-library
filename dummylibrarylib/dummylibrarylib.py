@@ -48,3 +48,11 @@ __status__ = '''Development'''  # "Prototype", "Development", "Production".
 LOGGER_BASENAME = '''dummylibrarylib'''
 LOGGER = logging.getLogger(LOGGER_BASENAME)
 LOGGER.addHandler(logging.NullHandler())
+
+
+class WhoAmI:  # pylint: disable=too-few-public-methods
+    """Prints who I am."""
+
+    def __init__(self):
+        LOGGER.info(f"My name is {__maintainer__}")  # pylint: disable=logging-fstring-interpolation
+        self.name = __maintainer__
